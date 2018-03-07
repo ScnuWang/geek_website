@@ -3,8 +3,8 @@
     <!--顶部导航栏-->
     <el-header  class="home-header">
       <span class="home_title">极客视界众筹产品数据库</span>
-      <el-menu  :default-active="activeIndex"  mode="horizontal" @select="handleSelect" backgroundColor="#409EFF"
-               textColor="#FFF">
+      <el-menu  mode="horizontal" @select="handleSelect"
+                backgroundColor="#409EFF" textColor="#FFF" >
         <el-menu-item index="1">消息</el-menu-item>
         <el-menu-item index="2">个人中心</el-menu-item>
         <el-menu-item index="3">设置</el-menu-item>
@@ -14,7 +14,7 @@
     <el-container>
       <!--侧边导航栏-->
       <el-aside >
-        <el-menu default-active="2"  @open="handleOpen" @close="handleClose">
+        <el-menu default-active="2"  @open="handleOpen" @close="handleClose" >
           <el-menu-item index="1">
             <i class="el-icon-menu"></i>
             <span slot="title">平台数据</span>
@@ -46,11 +46,17 @@
 
 <script>
     export default {
-        data() {
-            return {
-                msg: 'Welcome to Your Vue.js App'
-            }
+      methods:{
+        handleOpen(key, keyPath) {
+          console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+          console.log(key, keyPath);
+        },
+        handleSelect(key, keyPath){
+          console.log(key, keyPath);
         }
+      }
     }
 </script>
 <style>
