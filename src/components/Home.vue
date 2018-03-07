@@ -1,0 +1,79 @@
+<template>
+  <el-container class="main-container">
+    <!--顶部导航栏-->
+    <el-header  class="home-header">
+      <span class="home_title">极客视界众筹产品数据库</span>
+      <el-menu  :default-active="activeIndex"  mode="horizontal" @select="handleSelect" backgroundColor="#409EFF"
+               textColor="#FFF">
+        <el-menu-item index="1">消息</el-menu-item>
+        <el-menu-item index="2">个人中心</el-menu-item>
+        <el-menu-item index="3">设置</el-menu-item>
+        <el-menu-item index="4">注销</el-menu-item>
+      </el-menu>
+    </el-header>
+    <el-container>
+      <!--侧边导航栏-->
+      <el-aside >
+        <el-menu default-active="2"  @open="handleOpen" @close="handleClose">
+          <el-menu-item index="1">
+            <i class="el-icon-menu"></i>
+            <span slot="title">平台数据</span>
+          </el-menu-item>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-view"></i>
+              <span>产品详情</span>
+            </template>
+            <el-menu-item index="2-1">产品列表</el-menu-item>
+            <el-menu-item index="2-1">产品分析</el-menu-item>
+          </el-submenu>
+          <el-menu-item index="3">
+            <i class="el-icon-setting"></i>
+            <span slot="title">用户中心</span>
+          </el-menu-item>
+          <el-menu-item index="4" disabled>
+            <i class="el-icon-edit"></i>
+            <span slot="title">权限管理</span>
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
+      <!--内容展示-->
+      <el-main>内容展示</el-main>
+      <el-footer>Copyright ©2014-2018 极客视界 All Rights Reserved</el-footer>
+    </el-container>
+  </el-container>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
+        }
+    }
+</script>
+<style>
+  .main-container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+/*display:的值不一样，对象表示不一样*/
+  .home_title {
+    font-size: 22px;
+    padding-right: 60%;
+    display: flex;
+    padding-top: 10px;
+    color: #FFF;
+  }
+/* 直接写display：flux 没用*/
+  .home-header {
+    text-align: center;
+    display: -webkit-box;
+    justify-content: flex-end;
+    background-color: #409EFF;
+  }
+</style>
